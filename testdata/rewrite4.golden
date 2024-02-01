@@ -13,64 +13,64 @@ package main
 
 // From example 1 of issue 1847.
 func _() {
-	var t = (&T{1000}).Id()
+  var t = (&T{1000}).Id()
 }
 
 // From example 2 of issue 1847.
 func _() {
-	fmt.Println((*xpp).a)
+  fmt.Println((*xpp).a)
 }
 
 // Some more test cases.
 func _() {
-	_ = (-x).f
-	_ = (*x).f
-	_ = (&x).f
-	_ = (!x).f
-	_ = -x.f
-	_ = *x.f
-	_ = &x.f
-	_ = !x.f
-	(-x).f()
-	(*x).f()
-	(&x).f()
-	(!x).f()
-	_ = -x.f()
-	_ = *x.f()
-	_ = &x.f()
-	_ = !x.f()
+  _ = (-x).f
+  _ = (*x).f
+  _ = (&x).f
+  _ = (!x).f
+  _ = -x.f
+  _ = *x.f
+  _ = &x.f
+  _ = !x.f
+  (-x).f()
+  (*x).f()
+  (&x).f()
+  (!x).f()
+  _ = -x.f()
+  _ = *x.f()
+  _ = &x.f()
+  _ = !x.f()
 
-	_ = (-x).f
-	_ = (*x).f
-	_ = (&x).f
-	_ = (!x).f
-	_ = -x.f
-	_ = *x.f
-	_ = &x.f
-	_ = !x.f
-	(-x).f()
-	(*x).f()
-	(&x).f()
-	(!x).f()
-	_ = -x.f()
-	_ = *x.f()
-	_ = &x.f()
-	_ = !x.f()
+  _ = (-x).f
+  _ = (*x).f
+  _ = (&x).f
+  _ = (!x).f
+  _ = -x.f
+  _ = *x.f
+  _ = &x.f
+  _ = !x.f
+  (-x).f()
+  (*x).f()
+  (&x).f()
+  (!x).f()
+  _ = -x.f()
+  _ = *x.f()
+  _ = &x.f()
+  _ = !x.f()
 
-	_ = -x.f
-	_ = *x.f
-	_ = &x.f
-	_ = !x.f
-	_ = -x.f
-	_ = *x.f
-	_ = &x.f
-	_ = !x.f
-	_ = -x.f()
-	_ = *x.f()
-	_ = &x.f()
-	_ = !x.f()
-	_ = -x.f()
-	_ = *x.f()
-	_ = &x.f()
-	_ = !x.f()
+  _ = -x.f
+  _ = *x.f
+  _ = &x.f
+  _ = !x.f
+  _ = -x.f
+  _ = *x.f
+  _ = &x.f
+  _ = !x.f
+  _ = -x.f()
+  _ = *x.f()
+  _ = &x.f()
+  _ = !x.f()
+  _ = -x.f()
+  _ = *x.f()
+  _ = &x.f()
+  _ = !x.f()
 }

@@ -7,7 +7,7 @@ Test case for issue 3961.
 package main
 
 func main() {
-	// line comment
-	println("hello, world!") // another line comment
-	println()
+  // line comment
+  println("hello, world!") // another line comment
+  println()
 }

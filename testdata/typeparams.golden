@@ -20,8 +20,8 @@ func f[P1, P2, P3 any](x1 P1, x2 P2, x3 P3) struct{}
 
 func f[P interface{}](x P)
 func f[P1, P2, P3 interface {
-	m1(P1)
-	~P2 | ~P3
+  m1(P1)
+  ~P2 | ~P3
 }](x1 P1, x2 P2, x3 P3) struct{}
 func f[P any](T1[P], T2[P]) T3[P]
 
@@ -29,7 +29,7 @@ func (x T[P]) m()
 func (T[P]) m(x T[P]) P
 
 func _() {
-	type _ []T[P]
-	var _ []T[P]
-	_ = []T[P]{}
+  type _ []T[P]
+  var _ []T[P]
+  _ = []T[P]{}
 }

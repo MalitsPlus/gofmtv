@@ -11,7 +11,7 @@
 package p
 
 func f(x int) int {
-	_ = 2 * x // this comment remains in the rewrite
-	_ = 2 * x
-	return 2 * x
+  _ = 2 * x // this comment remains in the rewrite
+  _ = 2 * x
+  return 2 * x
 }

@@ -1,5 +1,5 @@
-	//gofmt -stdin
+  //gofmt -stdin
 
-	if x {
-		y
-	}
+  if x {
+    y
+  }

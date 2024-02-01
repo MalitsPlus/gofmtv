@@ -1,5 +1,5 @@
-	//gofmt -stdin
+  //gofmt -stdin
 
-	// comment
+  // comment
 
-	i := 0
+  i := 0

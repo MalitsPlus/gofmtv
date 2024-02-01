@@ -9,11 +9,11 @@
 package pkg
 
 func fn() {
-	_ = func() {
-		switch {
-		default:
-		}
-	}
-	_ = func() string {}
-	_ = func() { var ptr *string; println(ptr) }
+  _ = func() {
+    switch {
+    default:
+    }
+  }
+  _ = func() string {}
+  _ = func() { var ptr *string; println(ptr) }
 }

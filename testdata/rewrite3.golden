@@ -10,5 +10,5 @@ package main
 // absent. These nil nodes must not be mistaken for expressions,
 // the rewriter should not try to dereference them. Was issue 2410.
 type Foo struct {
-	Field int
+  Field int
 }

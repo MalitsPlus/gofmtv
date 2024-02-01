@@ -12,6 +12,6 @@ package p
 func fun(x []int) {}
 
 func g(x []int) {
-	Fun(x)    // -r='fun(x)->Fun(x)' should rewrite this to Fun(x)
-	fun(x...) // -r='fun(x)->Fun(x)' should not rewrite this
+  Fun(x)    // -r='fun(x)->Fun(x)' should rewrite this to Fun(x)
+  fun(x...) // -r='fun(x)->Fun(x)' should not rewrite this
 }

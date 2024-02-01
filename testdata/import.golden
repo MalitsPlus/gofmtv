@@ -2,23 +2,23 @@
 package main
 
 import (
-	"errors"
-	"fmt"
-	"io"
-	"log"
-	"math"
+  "errors"
+  "fmt"
+  "io"
+  "log"
+  "math"
 )
 
 import (
-	"fmt"
+  "fmt"
 
-	"math"
+  "math"
 
-	"log"
+  "log"
 
-	"errors"
+  "errors"
 
-	"io"
+  "io"
 )
 
 // We reset the line numbering to test that
@@ -26,143 +26,143 @@ import (
 //line :19
 
 import (
-	"errors"
-	"fmt"
-	"io"
-	"log"
-	"math"
+  "errors"
+  "fmt"
+  "io"
+  "log"
+  "math"
 
-	"fmt"
+  "fmt"
 
-	"math"
+  "math"
 
-	"log"
+  "log"
 
-	"errors"
+  "errors"
 
-	"io"
+  "io"
 )
 
 import (
-	// a block with comments
-	"errors"
-	"fmt" // for Printf
-	"io"  // for Reader
-	"log" // for Fatal
-	"math"
+  // a block with comments
+  "errors"
+  "fmt" // for Printf
+  "io"  // for Reader
+  "log" // for Fatal
+  "math"
 )
 
 import (
-	"fmt" // for Printf
+  "fmt" // for Printf
 
-	"math"
+  "math"
 
-	"log" // for Fatal
+  "log" // for Fatal
 
-	"errors"
+  "errors"
 
-	"io" // for Reader
+  "io" // for Reader
 )
 
 import (
-	// for Printf
-	"fmt"
+  // for Printf
+  "fmt"
 
-	"math"
+  "math"
 
-	// for Fatal
-	"log"
+  // for Fatal
+  "log"
 
-	"errors"
+  "errors"
 
-	// for Reader
-	"io"
+  // for Reader
+  "io"
 )
 
 import (
-	"errors"
-	"fmt" // for Printf
-	"io"  // for Reader
-	"log" // for Fatal
-	"math"
+  "errors"
+  "fmt" // for Printf
+  "io"  // for Reader
+  "log" // for Fatal
+  "math"
 
-	"fmt" // for Printf
+  "fmt" // for Printf
 
-	"math"
+  "math"
 
-	"log" // for Fatal
+  "log" // for Fatal
 
-	"errors"
+  "errors"
 
-	"io" // for Reader
+  "io" // for Reader
 )
 
 import (
-	"fmt" // for Printf
+  "fmt" // for Printf
 
-	"errors"
-	"io"  // for Reader
-	"log" // for Fatal
-	"math"
+  "errors"
+  "io"  // for Reader
+  "log" // for Fatal
+  "math"
 
-	"errors"
-	"fmt" // for Printf
-	"io"  // for Reader
-	"log" // for Fatal
-	"math"
+  "errors"
+  "fmt" // for Printf
+  "io"  // for Reader
+  "log" // for Fatal
+  "math"
 )
 
 // Test deduping and extended sorting
 import (
-	a "A" // aA
-	b "A" // bA1
-	b "A" // bA2
-	"B"   // B
-	. "B" // .B
-	_ "B" // _b
-	"C"
-	a "D" // aD
+  a "A" // aA
+  b "A" // bA1
+  b "A" // bA2
+  "B"   // B
+  . "B" // .B
+  _ "B" // _b
+  "C"
+  a "D" // aD
 )
 
 import (
-	"dedup_by_group"
+  "dedup_by_group"
 
-	"dedup_by_group"
+  "dedup_by_group"
 )
 
 import (
-	"fmt" // for Printf
-	/* comment */ io1 "io"
-	/* comment */ io2 "io"
-	/* comment */ "log"
+  "fmt" // for Printf
+  /* comment */ io1 "io"
+  /* comment */ io2 "io"
+  /* comment */ "log"
 )
 
 import (
-	"fmt"
-	/* comment */ io1 "io"
-	/* comment */ io2 "io" // hello
-	"math"                 /* right side */
-	// end
+  "fmt"
+  /* comment */ io1 "io"
+  /* comment */ io2 "io" // hello
+  "math"                 /* right side */
+  // end
 )
 
 import (
-	"errors" // for New
-	"fmt"
-	/* comment */ io1 "io" /* before */ // after
-	io2 "io"               // another
-	// end
+  "errors" // for New
+  "fmt"
+  /* comment */ io1 "io" /* before */ // after
+  io2 "io"               // another
+  // end
 )
 
 import (
-	"errors" // for New
-	/* left */ "fmt" /* right */
-	"log"            // for Fatal
-	/* left */ "math" /* right */
+  "errors" // for New
+  /* left */ "fmt" /* right */
+  "log"            // for Fatal
+  /* left */ "math" /* right */
 )
 
 import /* why */ /* comment here? */ (
-	/* comment */ "fmt"
-	"math"
+  /* comment */ "fmt"
+  "math"
 )
 
 // Reset it again
@@ -170,25 +170,25 @@ import /* why */ /* comment here? */ (
 
 // Dedup with different import styles
 import (
-	"path"
-	. "path"
-	_ "path"
-	pathpkg "path"
+  "path"
+  . "path"
+  _ "path"
+  pathpkg "path"
 )
 
 /* comment */
 import (
-	"fmt"
-	"math" // for Abs
-	// This is a new run
-	"errors"
-	"fmt"
+  "fmt"
+  "math" // for Abs
+  // This is a new run
+  "errors"
+  "fmt"
 )
 
 // End an import declaration in the same line
 // as the last import. See golang.org/issue/33538.
 // Note: Must be the last (or 2nd last) line of the file.
 import (
-	"fmt"
-	"math"
+  "fmt"
+  "math"
 )
