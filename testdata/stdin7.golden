@@ -10,10 +10,10 @@ line 2.
                               f := func(hat, tail string) {
 
                                 fmt.Println(hat+`
-    foo
+		foo
 
 
-  `+tail,
+	`+tail,
                                   "more",
                                   "and more")
                               }
