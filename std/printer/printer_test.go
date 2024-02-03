@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"malitsplus/gofmtv/std/diff"
+	"github.com/malitsplus/gofmtv/std/diff"
 )
 
 const (

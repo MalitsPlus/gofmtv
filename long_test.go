@@ -22,8 +22,8 @@ import (
 	"strings"
 	"testing"
 
-	"malitsplus/gofmtv/std/printer"
-	"malitsplus/gofmtv/std/testenv"
+	"github.com/malitsplus/gofmtv/std/printer"
+	"github.com/malitsplus/gofmtv/std/testenv"
 )
 
 var (

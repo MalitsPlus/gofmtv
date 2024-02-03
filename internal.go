@@ -16,7 +16,7 @@ import (
 	"go/token"
 	"strings"
 
-	"malitsplus/gofmtv/std/printer"
+	"github.com/malitsplus/gofmtv/std/printer"
 )
 
 // parse parses src, which was read from the named file,

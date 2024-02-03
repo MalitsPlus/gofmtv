@@ -24,8 +24,8 @@ import (
 	"sync"
 	"testing"
 
-	"malitsplus/gofmtv/std/cfg"
-	"malitsplus/gofmtv/std/platform"
+	"github.com/malitsplus/gofmtv/std/cfg"
+	"github.com/malitsplus/gofmtv/std/platform"
 )
 
 // Save the original environment during init for use in checks. A test

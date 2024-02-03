@@ -16,7 +16,7 @@ import (
 	"sync"
 	"unicode"
 
-	"malitsplus/gofmtv/std/tabwriter"
+	"github.com/malitsplus/gofmtv/std/tabwriter"
 )
 
 const (

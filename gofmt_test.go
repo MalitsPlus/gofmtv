@@ -13,7 +13,7 @@ import (
   "testing"
   "text/scanner"
 
-  "malitsplus/gofmtv/std/diff"
+  "github.com/malitsplus/gofmtv/std/diff"
 )
 
 var update = flag.Bool("update", false, "update .golden files")

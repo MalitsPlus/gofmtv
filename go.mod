@@ -1,4 +1,4 @@
-module malitsplus/gofmtv
+module github.com/malitsplus/gofmtv
 
 go 1.21.5
 

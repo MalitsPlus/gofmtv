@@ -24,8 +24,8 @@ import (
   "strings"
 
   "golang.org/x/sync/semaphore"
-  "malitsplus/gofmtv/std/diff"
-  "malitsplus/gofmtv/std/printer"
+  "github.com/malitsplus/gofmtv/std/diff"
+  "github.com/malitsplus/gofmtv/std/printer"
 )
 
 var (
