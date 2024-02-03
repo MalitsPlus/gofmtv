@@ -6,10 +6,16 @@
 
 `gofmtv` is slightly modified based on the original [gofmt](https://github.com/golang/go/tree/b8ac61e6e64c92f23d8cf868a92a70d13e20a124/src/cmd/gofmt), retaining all its functionality except for indentation rules.
 
+## Install
+
+```bash
+go install github.com/malitsplus/gofmtv@latest
+```
+
 ## How to use
 
 See the [original gofmt document](https://pkg.go.dev/cmd/gofmt).
 
-## References
+## Credits
 
 https://github.com/golang/go
