@@ -571,7 +571,7 @@ func stripCommonPrefix(lines []string) {
 			// relative to the /* and */'s if it was indented
 			// in the first place
 			i := len(prefix)
-			for n := 0; n < 3 && i > 0 && prefix[i-1] == ' '; n++ {
+			for n := 0; n < 2 && i > 0 && prefix[i-1] == ' '; n++ {
 				i--
 			}
 			if i == len(prefix) && i > 0 && prefix[i-1] == '\t' {
@@ -623,6 +623,16 @@ func stripCommonPrefix(lines []string) {
 	for i, line := range lines {
 		if i > 0 && line != "" {
 			lines[i] = line[len(prefix):]
+			// convert leading tabs to 2 whitespaces in comments if any
+			tabCount := 0
+			for _, ch := range lines[i] {
+				if ch == '\t' {
+					tabCount++
+				} else {
+					break
+				}
+			}
+			lines[i] = strings.Replace(lines[i], "\t", "  ", tabCount)
 		}
 	}
 }

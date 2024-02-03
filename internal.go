@@ -46,7 +46,10 @@ func parse(fset *token.FileSet, filename string, src []byte, fragmentOk bool) (
 		sourceAdj = func(src []byte, indent int) []byte {
 			// Remove the package clause.
 			// Gofmt has turned the ';' into a '\n'.
-			src = src[indent+len("package p\n"):]
+			// Since we changed indent from '\t' to
+			// two whitespaces, the length of the
+			// indent must be multiplied by 2
+			src = src[indent*2+len("package p\n"):]
 			return bytes.TrimSpace(src)
 		}
 		return
@@ -75,7 +78,10 @@ func parse(fset *token.FileSet, filename string, src []byte, fragmentOk bool) (
 			// Remove the wrapping.
 			// Gofmt has turned the "; " into a "\n\n".
 			// There will be two non-blank lines with indent, hence 2*indent.
-			src = src[2*indent+len("package p\n\nfunc _() {"):]
+			// Since we changed indent from '\t' to
+			// two whitespaces, the length of the
+			// indent must be multiplied by another 2
+			src = src[2*indent*2+len("package p\n\nfunc _() {"):]
 			// Remove only the "}\n" suffix: remaining whitespaces will be trimmed anyway
 			src = src[:len(src)-len("}\n")]
 			return bytes.TrimSpace(src)
@@ -127,19 +133,26 @@ func format(
 	// in which case spaces count as one tab.
 	indent := 0
 	hasSpace := false
+	reach := false
 	for _, b := range src[i:j] {
 		switch b {
 		case ' ':
-			hasSpace = true
+			if reach {
+				indent++
+				reach = false
+			} else {
+				reach = true
+			}
 		case '\t':
 			indent++
 		}
 	}
+	hasSpace = reach
 	if indent == 0 && hasSpace {
 		indent = 1
 	}
 	for i := 0; i < indent; i++ {
-		res = append(res, '\t')
+		res = append(res, ' ', ' ')
 	}
 
 	// Format the source.
@@ -167,7 +180,7 @@ func format(
 	for i > 0 && isSpace(src[i-1]) {
 		i--
 	}
-	return append(res, src[i:]...), nil
+	return append(res, replaceTab2SpaceSlice(src[i:])...), nil
 }
 
 // isSpace reports whether the byte is a space character.
