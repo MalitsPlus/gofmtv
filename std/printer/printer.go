@@ -220,13 +220,13 @@ func (p *printer) writeIndent() {
 	// must not be discarded by the tabwriter
 	n := p.Config.Indent + p.indent // include base indentation
 	for i := 0; i < n; i++ {
-		p.output = append(p.output, '\t')
+		p.output = append(p.output, ' ', ' ')
 	}
 
 	// update positions
-	p.pos.Offset += n
-	p.pos.Column += n
-	p.out.Column += n
+	p.pos.Offset += n*2
+	p.pos.Column += n*2
+	p.out.Column += n*2
 }
 
 // writeByte writes ch n times to p.output and updates p.pos.
@@ -538,7 +538,7 @@ func stripCommonPrefix(lines []string) {
 				}
 				prefix = commonPrefix(prefix, line)
 			}
-
+			// fmt.Println(prefix)
 		}
 	}
 	// If we don't have a prefix yet, consider the last line.
@@ -579,24 +579,26 @@ func stripCommonPrefix(lines []string) {
 			}
 			prefix = prefix[0:i]
 		} else {
-			// comment text on the first line
-			suffix := make([]byte, len(first))
-			n := 2 // start after opening /*
-			for n < len(first) && first[n] <= ' ' {
-				suffix[n] = first[n]
-				n++
-			}
-			if n > 2 && suffix[2] == '\t' {
-				// assume the '\t' compensates for the /*
-				suffix = suffix[2:n]
-			} else {
-				// otherwise assume two blanks
-				suffix[0], suffix[1] = ' ', ' '
-				suffix = suffix[0:n]
-			}
-			// Shorten the computed common prefix by the length of
-			// suffix, if it is found as suffix of the prefix.
-			prefix = strings.TrimSuffix(prefix, string(suffix))
+			// // comment text on the first line
+			// suffix := make([]byte, len(first))
+			// n := 2 // start after opening /*
+			// for n < len(first) && first[n] <= ' ' {
+			// 	suffix[n] = first[n]
+			// 	n++
+			// }
+			// if n > 2 && suffix[2] == '\t' {
+			// 	// assume the '\t' compensates for the /*
+			// 	suffix = suffix[2:n]
+			// } else {
+			// 	// otherwise assume two blanks
+			// 	suffix[0], suffix[1] = ' ', ' '
+			// 	suffix = suffix[0:n]
+			// }
+			// // Shorten the computed common prefix by the length of
+			// // suffix, if it is found as suffix of the prefix.
+			// fmt.Println(prefix)
+			// fmt.Println(suffix)
+			// prefix = strings.TrimSuffix(prefix, string(suffix))
 		}
 	}
 
@@ -618,7 +620,7 @@ func stripCommonPrefix(lines []string) {
 		// in prefix computation
 		prefix = commonPrefix(prefix, last)
 	}
-
+	// fmt.Println(prefix)
 	// Remove the common prefix from all but the first and empty lines.
 	for i, line := range lines {
 		if i > 0 && line != "" {
