@@ -23,9 +23,9 @@ import (
   "strconv"
   "strings"
 
-  "golang.org/x/sync/semaphore"
   "github.com/malitsplus/gofmtv/std/diff"
   "github.com/malitsplus/gofmtv/std/printer"
+  "golang.org/x/sync/semaphore"
 )
 
 var (
