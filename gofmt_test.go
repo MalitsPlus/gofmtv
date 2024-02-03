@@ -54,7 +54,7 @@ func gofmtFlags(filename string, maxLines int) string {
   return ""
 }
 
-func runTest(t *testing.T, in, out string) {
+func runTest(t *testing.T, in, out string, isSecondTime bool) {
   // process flags
   *simplifyAST = false
   *rewriteRule = ""
@@ -119,7 +119,7 @@ func runTest(t *testing.T, in, out string) {
       t.Errorf("WARNING: -update did not rewrite input file %s", in)
     }
 
-    t.Errorf("(gofmt %s) != %s (see %s.gofmt)\n%s", in, out, in,
+    t.Errorf("(gofmt %s) != %s (see %s.gofmt)\nidempotent error: %v\n%s", in, out, in, isSecondTime,
       diff.Diff("expected", expected, "got", got))
     if err := os.WriteFile(in+".gofmt", got, 0666); err != nil {
       t.Error(err)
@@ -151,10 +151,10 @@ func TestRewrite(t *testing.T) {
       if strings.HasSuffix(in, ".input") {
         out = in[:len(in)-len(".input")] + ".golden"
       }
-      runTest(t, in, out)
+      runTest(t, in, out, false)
       if in != out && !t.Failed() {
         // Check idempotence.
-        runTest(t, out, out)
+        runTest(t, out, out, true)
       }
     })
   }
